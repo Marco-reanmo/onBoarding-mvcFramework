@@ -1,16 +1,18 @@
 <?php
-    class Pages {
+    class Pages extends Controller{
         
         public function __construct() {
             echo 'This is the Pages Class.';
         }
         
         public function index() {
-            echo '<br>Index';
+            //Todo: loadModel(...) and then push into $data
+            $data = ['title' => 'Index'];
+            $this->loadView('pages/index', $data);;
         }
 
         public function about() {
-            echo '<br>Its about pages';
+            $this->loadView('pages/about');
         }
     }
     

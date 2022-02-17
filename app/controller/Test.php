@@ -1,15 +1,15 @@
 <?php
-    class Test {
+    class Test extends Controller {
         
         public function __construct() {
             echo 'This is a test';
         }
 
         public function index() {
-            echo '<br>Index';
+            $this->loadView('test/index');
         }
 
         public function about() {
-            echo '<br>Its about tests';
+            $this->loadView('Unknown');
         }
     }
