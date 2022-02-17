@@ -7,12 +7,12 @@
     class Controller {
 
         public function loadModel($modelname) {
-            require_once __DIR__ . '/../model/' . $modelname . '.php';
+            require_once APPROOT . 'model/' . $modelname . '.php';
             return new $modelname;
         }
 
         public function loadView($viewname, $data = []) {
-            $viewfile = __DIR__ . '/../view/' . $viewname . '.php';
+            $viewfile = APPROOT . 'view/' . $viewname . '.php';
             if(file_exists($viewfile)) {
                 require_once $viewfile;
             } else {

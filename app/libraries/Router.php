@@ -44,11 +44,11 @@
     }
 
     private function initController($classname) {
-      if(file_exists(__DIR__ . '/../controller/' . $classname . '.php')) {
-        require_once __DIR__ . '/../controller/'. $classname . '.php';
+      if(file_exists(APPROOT . 'controller/' . $classname . '.php')) {
+        require_once APPROOT . 'controller/'. $classname . '.php';
         return new $classname;
       } else { //Default
-        require_once __DIR__ . '/../controller/Pages.php';
+        require_once APPROOT . 'controller/Pages.php';
         return 'Pages';
       }
     }
