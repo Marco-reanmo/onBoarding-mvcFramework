@@ -1,0 +1,1 @@
+<h1>Pages - <?php echo $data['title'];?></h1>
