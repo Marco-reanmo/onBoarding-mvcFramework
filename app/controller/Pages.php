@@ -1,13 +1,18 @@
 <?php
     class Pages extends Controller{
         
+        private $studentModel;
+
         public function __construct() {
-            echo 'This is the Pages Class.';
+            $this->studentModel = $this->loadModel('Student');
         }
         
         public function index() {
-            //Todo: loadModel(...) and then push into $data
-            $data = ['title' => 'Index'];
+            $students = $this->studentModel->getAllStudents();
+            $data = [
+                'title' => 'Index',
+                'students' => $students    
+            ];
             $this->loadView('pages/index', $data);;
         }
 
